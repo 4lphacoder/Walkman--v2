@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/play_pause_button"
+        android:icon="@drawable/ic_play_arrow_filled_accent_168dp"
+        android:title="Play" />
+
+    <item
+        android:id="@+id/explore_btn"
+        android:icon="@drawable/ic_search_silver"
+        android:title="Explore" />
+
+    <item
+        android:id="@+id/home_btn"
+        android:icon="@drawable/ic_home_silver"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/my_music_btn"
+        android:icon="@drawable/ic_radio_white_96dp"
+        android:title="Library" />
+
+    <item
+        android:id="@+id/media_player"
+        android:icon="@drawable/ic_graphic_eq_white_96dp"
+        android:title="Player" />
+
+</menu>

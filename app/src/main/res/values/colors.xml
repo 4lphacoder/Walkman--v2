@@ -1,6 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorPrimary">@color/colorGray</color>
+    <color name="colorPrimaryDark">@color/colorCodGray</color>
+    <color name="colorAccent">@color/colorMountainMeadow</color>
+    <color name="colorSilverChalice">#a9a9a9</color>
+    <color name="colorGray">#808080</color>
+
+    <color name="colorAmaranth">#f1304d</color>
+    <color name="colorEbonyClay">#212d3a</color>
+    <color name="colorNevada">#646d78</color>
+    <color name="colorLight">#bbe1fa</color>
+    <color name="colorLightBlue">#1284fe</color>
+    <color name="colorLightGreen">#17643f</color>
+    <color name="colorTarquese">#0cc7db</color>
+    <color name="colorMatteRed">#bd2e51</color>
+    <color name="colorMatteYellow">#f6a236</color>
+    <color name="colorMatteGreen">#20d38f</color>
+    <color name="colorDark">#262729</color>
+    <color name="colorWhite">#fff</color>
+    <color name="colorBlack">#000</color>
+
+    <color name="colorViolet">#110630</color>
+    <color name="colorTawny">#602040</color>
+    <color name="colorCannonPink">#813e60</color>
+    <color name="colorFroly">#F47C7D</color>
+    <color name="colorWaxFlower">#feb798</color>
+
+    <color name="colorCodGray">#181413</color>
+    <color name="colorMalachite">#1ED760</color>
+    <color name="colorMountainMeadow">#1db954</color>
+
+    <color name="colorMystic">#DEE9E7</color>
+    <color name="colorViking">#FA91AE</color>
+
+    <color name="black_overlay">#66000000</color>
 </resources>

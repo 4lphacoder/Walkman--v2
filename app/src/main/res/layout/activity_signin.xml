@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient_1"
+    tools:context=".Activities.SigninActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/textView7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:fontFamily="@font/gotham_bold"
+            android:text="Millions of songs."
+            android:textColor="@color/colorWhite"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/gotham_bold"
+            android:text="Listen on Walkman."
+            android:textColor="@color/colorWhite"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="42dp"
+            android:fontFamily="@font/gotham_medium"
+            android:text="Continue with"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:id="@+id/sign_in_with_google"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_accent_background"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="20dp">
+
+            <ProgressBar
+                android:id="@+id/sign_in_with_google_progressBar"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:indeterminateTint="@color/colorWhite"
+                android:progressTintMode="src_atop"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/google_logo"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                app:srcCompat="@drawable/google_logo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/gotham_medium"
+                android:text="Google+"
+                android:textColor="@color/colorWhite"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/sign_in_with_facebook"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_white_border"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="20dp">
+
+            <ProgressBar
+                android:id="@+id/sign_in_with_facebook_progressBar"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:indeterminateTint="@color/colorWhite"
+                android:progressTintMode="src_atop"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/facebook_logo"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                app:srcCompat="@drawable/facebook_logo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/gotham_medium"
+                android:text="Facebook"
+                android:textColor="@color/colorWhite"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="By clicking log in, you agree to our Privacy Policy and Terms of Services."
+        android:textColor="@color/colorWhite"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:fontFamily="@font/gotham_light"
+        android:lineSpacingExtra="4dp"
+        android:layout_marginHorizontal="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="-1dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
