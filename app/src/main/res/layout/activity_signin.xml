@@ -26,7 +26,7 @@
             android:fontFamily="@font/gotham_bold"
             android:text="Millions of songs."
             android:textColor="@color/colorWhite"
-            android:textSize="30sp"
+            android:textSize="@dimen/dim30sp"
             android:textStyle="bold" />
 
         <TextView
@@ -38,7 +38,7 @@
             android:fontFamily="@font/gotham_bold"
             android:text="Listen on Walkman."
             android:textColor="@color/colorWhite"
-            android:textSize="30sp"
+            android:textSize="@dimen/dim30sp"
             android:textStyle="bold" />
 
         <TextView
