@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- THESE DIMENSIONS ARE MEASURED FOR PIXEL 3A DEVICE AND MADE THEM ADJUST FOR OTHER DEVICES    -->
+    <dimen name="pixel30sp">50sp</dimen>
+    <dimen name="pixel18sp">26sp</dimen>
+    <dimen name="pixel14sp">20sp</dimen>
+
+    <dimen name="pixel4dp">8dp</dimen>
+
+    <dimen name="margin_16dp">22dp</dimen>
+    <dimen name="margin_24dp">38dp</dimen>
+    <dimen name="margin_32dp">32dp</dimen>
+    <dimen name="margin_42dp">54dp</dimen>
+    <dimen name="margin_64dp">80dp</dimen>
+
+    <dimen name="pill_btn_padding">28dp</dimen>
+    <dimen name="pill_btn_corner_radius">38dp</dimen>
+    <dimen name="pill_btn_horizontal_margin">38dp</dimen>
+    <dimen name="oauth_services_progress_bar">24dp</dimen>
+    <dimen name="oauth_services_logo">22dp</dimen>
+
+</resources>

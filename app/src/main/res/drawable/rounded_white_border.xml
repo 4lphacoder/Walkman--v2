@@ -2,5 +2,5 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <solid android:color="@null" />
     <stroke android:color="@color/colorWhite" android:width="1dp"/>
-    <corners android:radius="26dp" />
+    <corners android:radius="@dimen/pill_btn_corner_radius" />
 </shape>

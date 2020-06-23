@@ -1,25 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- THESE DIMENSIONS ARE MEASURED FOR PIXEL 3A DEVICE AND MADE THEM ADJUST FOR OTHER DEVICES    -->
-    <!-- USED FOR SETTING CROSS-DEVICE COMPATIBLE OBJECT SIZE, LIKE OF A PICTURE, TEXT, ETC.   -->
     <dimen name="pixel30sp">30sp</dimen>
     <dimen name="pixel18sp">18sp</dimen>
     <dimen name="pixel14sp">14sp</dimen>
 
     <dimen name="pixel4dp">4dp</dimen>
 
-    <!-- USED FOR SETTING CROSS-DEVICE COMPATIBLE MARGINS   -->
     <dimen name="margin_16dp">16dp</dimen>
     <dimen name="margin_24dp">24dp</dimen>
     <dimen name="margin_32dp">32dp</dimen>
     <dimen name="margin_42dp">42dp</dimen>
     <dimen name="margin_64dp">64dp</dimen>
 
-    <!-- USED FOR SETTING DIMENSIONS OF BUTTONS CREATED   -->
     <dimen name="pill_btn_padding">20dp</dimen>
     <dimen name="pill_btn_corner_radius">26dp</dimen>
     <dimen name="pill_btn_horizontal_margin">24dp</dimen>
     <dimen name="oauth_services_progress_bar">20dp</dimen>
     <dimen name="oauth_services_logo">18dp</dimen>
+
 
 </resources>
