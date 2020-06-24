@@ -128,7 +128,7 @@ public class SigninActivity extends AppCompatActivity {
             Log.d("Application-Status", "signInResult:failed code=" + e.getStatusCode());
             // DISPLAYING ERROR-TOAST-MSG TO USER
             Toast errorMsgToast = Toast.makeText(this,"Unable to sign-in user, please try again.",Toast.LENGTH_SHORT);
-            errorMsgToast.setGravity(Gravity.TOP|Gravity.CENTER_VERTICAL,0,400);
+            errorMsgToast.setGravity(Gravity.TOP|Gravity.CENTER_VERTICAL,0,(int) getResources().getDimension(R.dimen.margin_64dp));
             errorMsgToast.show();
         }
     }
@@ -138,7 +138,7 @@ public class SigninActivity extends AppCompatActivity {
         Toast errorMsgToast = Toast.makeText(this,
                 "Sorry, this feature is currently unavailable, please try to sign-in with google",
                 Toast.LENGTH_SHORT);
-        errorMsgToast.setGravity(Gravity.TOP|Gravity.CENTER_VERTICAL,0,400);
+        errorMsgToast.setGravity(Gravity.TOP|Gravity.CENTER_VERTICAL,0,(int) getResources().getDimension(R.dimen.margin_64dp));
         errorMsgToast.show();
         SignInWithFacebook.setClickable(true);   // ENABLING BUTTON BACK TO ORIGINAL STATE
         SignInWithFacebookProgressBar.setVisibility(View.GONE);    // HIDING PROGRESS-BAR
