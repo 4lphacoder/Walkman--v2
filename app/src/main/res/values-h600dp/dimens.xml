@@ -6,6 +6,8 @@
     <dimen name="pixel14sp">14sp</dimen>
 
     <dimen name="pixel4dp">4dp</dimen>
+    <dimen name="launcher_logo_height">102dp</dimen>
+    <dimen name="launcher_logo_width">218dp</dimen>
 
     <dimen name="margin_16dp">16dp</dimen>
     <dimen name="margin_24dp">24dp</dimen>
@@ -17,7 +19,7 @@
     <dimen name="pill_btn_corner_radius">26dp</dimen>
     <dimen name="pill_btn_horizontal_margin">24dp</dimen>
     <dimen name="oauth_services_progress_bar">20dp</dimen>
-    <dimen name="oauth_services_logo">18dp</dimen>
+    <dimen name="oauth_services_logo">20dp</dimen>
 
 
 </resources>

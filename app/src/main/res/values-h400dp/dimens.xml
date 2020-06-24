@@ -3,9 +3,11 @@
     <!-- THESE DIMENSIONS ARE MEASURED FOR PIXEL 3A DEVICE AND MADE THEM ADJUST FOR OTHER DEVICES    -->
     <dimen name="pixel30sp">27sp</dimen>
     <dimen name="pixel18sp">16sp</dimen>
-    <dimen name="pixel14sp">12sp</dimen>
+    <dimen name="pixel14sp">13sp</dimen>
 
     <dimen name="pixel4dp">3dp</dimen>
+    <dimen name="launcher_logo_height">76dp</dimen>
+    <dimen name="launcher_logo_width">162dp</dimen>
 
     <dimen name="margin_16dp">12dp</dimen>
     <dimen name="margin_24dp">18dp</dimen>
@@ -17,7 +19,7 @@
     <dimen name="pill_btn_corner_radius">23dp</dimen>
     <dimen name="pill_btn_horizontal_margin">18dp</dimen>
     <dimen name="oauth_services_progress_bar">16dp</dimen>
-    <dimen name="oauth_services_logo">14dp</dimen>
+    <dimen name="oauth_services_logo">16dp</dimen>
 
 
 </resources>

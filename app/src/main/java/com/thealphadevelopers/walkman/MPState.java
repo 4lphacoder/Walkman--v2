@@ -124,7 +124,7 @@ public class MPState extends Application {
 
         SharedPreferences userInfoSharedPref = context.getSharedPreferences("user_info",Context.MODE_PRIVATE);
         SharedPreferences.Editor userInfoEditor = userInfoSharedPref.edit();
-        userInfoEditor.putString("userInfo", userInfo.parseUserInfoToString());
+        userInfoEditor.putString("userInfo", userInfo.toString());
         userInfoEditor.commit();
         Log.d("Application-Status","[ INFO  ] Saving in user_info SharedPreferences");
 

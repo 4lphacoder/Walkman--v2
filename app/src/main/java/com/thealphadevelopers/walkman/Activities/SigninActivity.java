@@ -1,7 +1,6 @@
 package com.thealphadevelopers.walkman.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,7 +11,6 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.thealphadevelopers.walkman.MPState;
 import com.thealphadevelopers.walkman.R;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -20,6 +18,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
+import com.thealphadevelopers.walkman.MPState;
 
 // THIS CLASS/ACTIVITY FETCHES USER EMAIL ADDRESS, DISPLAY-NAME FROM OAUTH SERVICES LIKE :-
 // GOOGLE OAUTH SERVICE AND FACEBOOK OAUTH SERVICE. AFTER SUCCESSFUL FETCH IT STORES THEM IN
@@ -91,7 +90,7 @@ public class SigninActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         // CHECK FOR EXISTING GOOGLE SIGN-IN ACCOUNT, IF THE USER IS ALREADY SIGNED IN
-        // THE GoogleSignInAccount WILL BE NULL
+        // THE GoogleSignInAccount WILL NOT BE NULL
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
         if(account != null) {
             // EXECUTES WHEN USER ALREADY SIGNED-IN
@@ -115,8 +114,10 @@ public class SigninActivity extends AppCompatActivity {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
             // SIGNED IN SUCCESSFULLY SHOWING AUTHENTICATED UI.
             Log.d("Application-Status","User logged-in via Google Oauth2.0 service");
+
             MPState.userInfo.setEmailAddress(account.getEmail());
             MPState.userInfo.setUserName(account.getDisplayName());
+            MPState.userInfo.setUserAvatarFromURI(account.getPhotoUrl(),this);
             MPState.save(this);
             // PROCEEDING TO THE NEXT-ACTIVITY
             startActivity(new Intent(this, UserPrefLanguagesActivity.class));
