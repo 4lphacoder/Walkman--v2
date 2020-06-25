@@ -2,11 +2,15 @@
 <resources>
     <!-- THESE DIMENSIONS ARE MEASURED FOR PIXEL 3A DEVICE AND MADE THEM ADJUST FOR OTHER DEVICES    -->
     <!-- USED FOR SETTING CROSS-DEVICE COMPATIBLE OBJECT SIZE, LIKE OF A PICTURE, TEXT, ETC.   -->
-    <dimen name="pixel30sp">30sp</dimen>
-    <dimen name="pixel18sp">18sp</dimen>
     <dimen name="pixel14sp">14sp</dimen>
+    <dimen name="pixel16sp">16sp</dimen>
+    <dimen name="pixel18sp">18sp</dimen>
+    <dimen name="pixel30sp">30sp</dimen>
+    <dimen name="pixel32sp">32sp</dimen>
 
     <dimen name="pixel4dp">4dp</dimen>
+    <dimen name="user_pref_artists_illustration_width">94dp</dimen>
+    <dimen name="user_pref_artists_illustration_height">120dp</dimen>
     <dimen name="launcher_logo_height">120dp</dimen>
     <dimen name="launcher_logo_width">256dp</dimen>
 

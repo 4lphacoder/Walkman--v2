@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- THESE DIMENSIONS ARE MEASURED FOR PIXEL 3A DEVICE AND MADE THEM ADJUST FOR OTHER DEVICES    -->
-    <dimen name="pixel30sp">27sp</dimen>
-    <dimen name="pixel18sp">16sp</dimen>
     <dimen name="pixel14sp">13sp</dimen>
+    <dimen name="pixel16sp">14sp</dimen>
+    <dimen name="pixel18sp">16sp</dimen>
+    <dimen name="pixel30sp">27sp</dimen>
+    <dimen name="pixel32sp">28sp</dimen>
 
     <dimen name="pixel4dp">3dp</dimen>
+    <dimen name="user_pref_artists_illustration_width">62dp</dimen>
+    <dimen name="user_pref_artists_illustration_height">80dp</dimen>
+
     <dimen name="launcher_logo_height">76dp</dimen>
     <dimen name="launcher_logo_width">162dp</dimen>
 

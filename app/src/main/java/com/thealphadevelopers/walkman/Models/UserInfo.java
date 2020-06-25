@@ -48,6 +48,11 @@ public class UserInfo {
         this.favouriteArtists.add(artist);
     }
     public void setUserAvatarFromURI(Uri uri,final Context context) {
+        if(uri == null) {
+            userAvatar = null;
+            userAvatarURL = null;
+            return;
+        }
         userAvatarURL = uri.toString();         // STORING LINK OF USER-AVATAR IN CASE, THERE'S ANY ERROR
                                                 // WHILE FETCHING THE IMAGE FROM USER
         // CALL BACK METHOD EXECUTES WHEN USER-AVATAR GETS DOWNLOADED FROM OAUTH-SERVICE SERVERS
@@ -97,6 +102,7 @@ public class UserInfo {
     }
 
     // PARSING USER-INFO INTO STRING TO STORE USER-INFO OBJECT IN SHARED-PREFERENCES
+    @Override
     public String toString() {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         return gson.toJson(this);
