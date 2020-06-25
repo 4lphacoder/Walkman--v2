@@ -45,6 +45,7 @@
             android:backgroundTint="@color/colorCodGray" >
 
             <LinearLayout
+                android:visibility="gone"
                 android:id="@+id/minimalMC_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -52,13 +53,11 @@
                 android:orientation="vertical">
 
                 <View
-                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="@color/colorDark" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -156,6 +155,7 @@
         app:itemIconTint="@drawable/bottom_navigation_view_text_color"
         app:menu="@menu/bottom_navigation"
         app:labelVisibilityMode="labeled"
+        app:itemIconSize="@dimen/bottom_nav_bar_icon_size"
         android:padding="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
