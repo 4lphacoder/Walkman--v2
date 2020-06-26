@@ -9,19 +9,29 @@
     <dimen name="pixel32sp">54sp</dimen>
 
     <dimen name="pixel4dp">8dp</dimen>
+    <dimen name="pixel24dp">34dp</dimen>
     <dimen name="user_pref_artists_illustration_width">125dp</dimen>
     <dimen name="user_pref_artists_illustration_height">160dp</dimen>
     <dimen name="launcher_logo_height">146dp</dimen>
     <dimen name="launcher_logo_width">312dp</dimen>
 
-    <dimen name="bottom_nav_bar_icon_size">38sp</dimen>
-    <dimen name="design_bottom_navigation_height" tools:override="true">75dp</dimen>
+    <dimen name="bottom_nav_bar_icon_size">34sp</dimen>
+    <dimen name="design_bottom_navigation_height" tools:override="true">70dp</dimen>
+
+    <!--HOME FRAGMENT DIMENSIONS -->
+    <dimen name="header_1_text_size">30sp</dimen>
+    <dimen name="header_2_text_size">18sp</dimen>
+    <dimen name="header_3_text_size">16sp</dimen>
+    <dimen name="header_4_text_size">14sp</dimen>
+    <dimen name="home_activity_illustration_width">140dp</dimen>
+    <dimen name="home_activity_illustration_height">160dp</dimen>
 
     <dimen name="margin_16dp">22dp</dimen>
     <dimen name="margin_24dp">38dp</dimen>
     <dimen name="margin_32dp">32dp</dimen>
     <dimen name="margin_42dp">54dp</dimen>
     <dimen name="margin_64dp">80dp</dimen>
+    <dimen name="margin_80dp">84dp</dimen>
 
     <dimen name="pill_btn_padding">28dp</dimen>
     <dimen name="pill_btn_corner_radius">38dp</dimen>

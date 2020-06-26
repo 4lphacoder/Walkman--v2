@@ -9,6 +9,7 @@
     <dimen name="pixel32sp">28sp</dimen>
 
     <dimen name="pixel4dp">3dp</dimen>
+    <dimen name="pixel24dp">20dp</dimen>
     <dimen name="user_pref_artists_illustration_width">62dp</dimen>
     <dimen name="user_pref_artists_illustration_height">80dp</dimen>
 
@@ -18,11 +19,20 @@
     <dimen name="bottom_nav_bar_icon_size">22sp</dimen>
     <dimen name="design_bottom_navigation_height" tools:override="true">51dp</dimen>
 
+    <!--HOME FRAGMENT DIMENSIONS -->
+    <dimen name="header_1_text_size">22sp</dimen>
+    <dimen name="header_2_text_size">14sp</dimen>
+    <dimen name="header_3_text_size">12sp</dimen>
+    <dimen name="header_4_text_size">10sp</dimen>
+    <dimen name="home_activity_illustration_width">116dp</dimen>
+    <dimen name="home_activity_illustration_height">132dp</dimen>
+
     <dimen name="margin_16dp">12dp</dimen>
     <dimen name="margin_24dp">18dp</dimen>
     <dimen name="margin_32dp">22dp</dimen>
     <dimen name="margin_42dp">38dp</dimen>
     <dimen name="margin_64dp">52dp</dimen>
+    <dimen name="margin_80dp">68dp</dimen>
 
     <dimen name="pill_btn_padding">18dp</dimen>
     <dimen name="pill_btn_corner_radius">23dp</dimen>

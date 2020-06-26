@@ -28,23 +28,23 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:background="@null"
-                android:paddingHorizontal="16dp"
+                android:paddingHorizontal="@dimen/margin_16dp"
                 android:paddingVertical="8dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent">
 
                 <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="@dimen/pixel24dp"
+                    android:layout_height="@dimen/pixel24dp"
                     android:layout_marginTop="8dp"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     android:src="@drawable/ic_drawer_btn_white" />
 
                 <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="@dimen/pixel24dp"
+                    android:layout_height="@dimen/pixel24dp"
                     android:layout_marginTop="8dp"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -67,10 +67,10 @@
                 android:fontFamily="@font/gotham_bold"
                 android:text="Hi There, Ghostman."
                 android:textAlignment="viewStart"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="24sp"
+                android:layout_marginStart="@dimen/margin_16dp"
+                android:layout_marginTop="@dimen/margin_24dp"
                 android:textColor="@color/colorWhite"
-                android:textSize="26sp"
+                android:textSize="@dimen/header_1_text_size"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -79,7 +79,7 @@
                 android:id="@+id/recommendation_based_on_user_taste"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
+                android:layout_margin="@dimen/margin_16dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/personalised_greeting"
@@ -88,21 +88,21 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="16dp"
-                    android:paddingRight="32dp"
+                    android:layout_marginHorizontal="@dimen/margin_16dp"
+                    android:paddingRight="@dimen/margin_32dp"
                     android:orientation="horizontal">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:layout_marginRight="16dp"
+                        android:layout_marginRight="@dimen/margin_16dp"
                         android:orientation="vertical">
 
                         <ImageView
                             android:id="@+id/favorite_songs"
-                            android:layout_width="140dp"
-                            android:layout_height="160dp"
+                            android:layout_width="@dimen/home_activity_illustration_width"
+                            android:layout_height="@dimen/home_activity_illustration_height"
                             android:background="@drawable/favorite_songs_illustration" />
 
                         <TextView
@@ -111,7 +111,7 @@
                             android:textColor="@color/colorWhite"
                             android:textAlignment="center"
                             android:fontFamily="sans-serif"
-                            android:textSize="14sp"
+                            android:textSize="@dimen/header_3_text_size"
                             android:layout_marginTop="4dp"
                             android:text="Favourite Songs" />
 
@@ -121,8 +121,8 @@
                             android:textColor="@color/colorSilverChalice"
                             android:textAlignment="center"
                             android:fontFamily="sans-serif"
-                            android:textSize="12sp"
-                            android:lineHeight="12sp"
+                            android:textSize="@dimen/header_4_text_size"
+                            android:lineHeight="@dimen/header_4_text_size"
                             android:text="Based on songs which\n you likes." />
                     </LinearLayout>
 
@@ -130,13 +130,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:layout_marginRight="16dp"
+                        android:layout_marginRight="@dimen/margin_16dp"
                         android:orientation="vertical">
 
                         <ImageView
                             android:id="@+id/most_listened_songs"
-                            android:layout_width="140dp"
-                            android:layout_height="160dp"
+                            android:layout_width="@dimen/home_activity_illustration_width"
+                            android:layout_height="@dimen/home_activity_illustration_height"
                             android:background="@drawable/most_listened_songs_illustration" />
 
                         <TextView
@@ -145,7 +145,7 @@
                             android:textColor="@color/colorWhite"
                             android:textAlignment="center"
                             android:fontFamily="sans-serif"
-                            android:textSize="14sp"
+                            android:textSize="@dimen/header_3_text_size"
                             android:layout_marginTop="4dp"
                             android:layout_marginBottom="0dp"
                             android:text="Most Listened Songs" />
@@ -156,8 +156,8 @@
                             android:textColor="@color/colorSilverChalice"
                             android:textAlignment="center"
                             android:fontFamily="sans-serif"
-                            android:textSize="12sp"
-                            android:lineHeight="12sp"
+                            android:textSize="@dimen/header_4_text_size"
+                            android:lineHeight="@dimen/header_4_text_size"
                             android:text="Based on what you hears\nmost of the time" />
                     </LinearLayout>
 
@@ -165,13 +165,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:layout_marginRight="16dp"
+                        android:layout_marginRight="@dimen/margin_16dp"
                         android:orientation="vertical">
 
                         <ImageView
                             android:id="@+id/english_songs"
-                            android:layout_width="140dp"
-                            android:layout_height="160dp"
+                            android:layout_width="@dimen/home_activity_illustration_width"
+                            android:layout_height="@dimen/home_activity_illustration_height"
                             android:background="@drawable/english_songs_illustration" />
 
                         <TextView
@@ -179,7 +179,7 @@
                             android:layout_height="wrap_content"
                             android:textColor="@color/colorWhite"
                             android:fontFamily="sans-serif"
-                            android:textSize="14sp"
+                            android:textSize="@dimen/header_3_text_size"
                             android:layout_marginTop="4dp"
                             android:text="English Songs" />
 
@@ -189,8 +189,8 @@
                             android:textColor="@color/colorSilverChalice"
                             android:textAlignment="center"
                             android:fontFamily="sans-serif"
-                            android:textSize="12sp"
-                            android:lineHeight="12sp"
+                            android:textSize="@dimen/header_4_text_size"
+                            android:lineHeight="@dimen/header_4_text_size"
                             android:text="Plays all English songs\nwhich you likes." />
                     </LinearLayout>
 
@@ -198,13 +198,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:layout_marginRight="16dp"
+                        android:layout_marginRight="@dimen/margin_16dp"
                         android:orientation="vertical">
 
                         <ImageView
                             android:id="@+id/punjabi_songs"
-                            android:layout_width="140dp"
-                            android:layout_height="160dp"
+                            android:layout_width="@dimen/home_activity_illustration_width"
+                            android:layout_height="@dimen/home_activity_illustration_height"
                             android:background="@drawable/punjabi_songs_illustration" />
 
                         <TextView
@@ -212,7 +212,7 @@
                             android:layout_height="wrap_content"
                             android:textColor="@color/colorWhite"
                             android:fontFamily="sans-serif"
-                            android:textSize="14sp"
+                            android:textSize="@dimen/header_3_text_size"
                             android:layout_marginTop="4dp"
                             android:text="Punjabi Songs" />
 
@@ -222,8 +222,8 @@
                             android:textColor="@color/colorSilverChalice"
                             android:textAlignment="center"
                             android:fontFamily="sans-serif"
-                            android:textSize="12sp"
-                            android:lineHeight="12sp"
+                            android:textSize="@dimen/header_4_text_size"
+                            android:lineHeight="@dimen/header_4_text_size"
                             android:text="Plays all Punjabi songs\nwhich you likes." />
                     </LinearLayout>
 
@@ -231,13 +231,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:layout_marginRight="16dp"
+                        android:layout_marginRight="@dimen/margin_16dp"
                         android:orientation="vertical">
 
                         <ImageView
                             android:id="@+id/bollywood_songs"
-                            android:layout_width="140dp"
-                            android:layout_height="160dp"
+                            android:layout_width="@dimen/home_activity_illustration_width"
+                            android:layout_height="@dimen/home_activity_illustration_height"
                             android:background="@drawable/bollywood_songs_illustration" />
 
                         <TextView
@@ -245,7 +245,7 @@
                             android:layout_height="wrap_content"
                             android:textColor="@color/colorWhite"
                             android:fontFamily="sans-serif"
-                            android:textSize="14sp"
+                            android:textSize="@dimen/header_3_text_size"
                             android:layout_marginTop="4dp"
                             android:text="Bollywood Songs" />
 
@@ -255,8 +255,8 @@
                             android:textColor="@color/colorSilverChalice"
                             android:textAlignment="center"
                             android:fontFamily="sans-serif"
-                            android:textSize="12sp"
-                            android:lineHeight="12sp"
+                            android:textSize="@dimen/header_4_text_size"
+                            android:lineHeight="@dimen/header_4_text_size"
                             android:text="Plays all Bollywood songs\nwhich you likes." />
                     </LinearLayout>
 
@@ -264,13 +264,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:layout_marginRight="16dp"
+                        android:layout_marginRight="@dimen/margin_16dp"
                         android:orientation="vertical">
 
                         <ImageView
                             android:id="@+id/rarely_listened_songs"
-                            android:layout_width="140dp"
-                            android:layout_height="160dp"
+                            android:layout_width="@dimen/home_activity_illustration_width"
+                            android:layout_height="@dimen/home_activity_illustration_height"
                             android:background="@drawable/rarely_listened_songs_illustration" />
 
                         <TextView
@@ -278,7 +278,7 @@
                             android:layout_height="wrap_content"
                             android:textColor="@color/colorWhite"
                             android:fontFamily="sans-serif"
-                            android:textSize="14sp"
+                            android:textSize="@dimen/header_3_text_size"
                             android:layout_marginTop="4dp"
                             android:text="Undiscovered Songs" />
 
@@ -288,8 +288,8 @@
                             android:textColor="@color/colorSilverChalice"
                             android:textAlignment="center"
                             android:fontFamily="sans-serif"
-                            android:textSize="12sp"
-                            android:lineHeight="12sp"
+                            android:textSize="@dimen/header_4_text_size"
+                            android:lineHeight="@dimen/header_4_text_size"
                             android:text="Plays all those songs which\nyou likes but rarely listens" />
                     </LinearLayout>
                 </LinearLayout>
@@ -301,11 +301,11 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/gotham_bold"
                 android:textStyle="bold"
-                android:textSize="26sp"
+                android:textSize="@dimen/header_1_text_size"
                 android:textColor="@color/colorWhite"
                 android:text="Moods"
                 android:textAlignment="viewStart"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="@dimen/margin_16dp"
                 android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -316,7 +316,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_margin="16dp"
+                android:layout_margin="@dimen/margin_16dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/moods_text" >
@@ -324,21 +324,21 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="16dp"
-                    android:paddingRight="32dp"
+                    android:layout_marginHorizontal="@dimen/margin_16dp"
+                    android:paddingRight="@dimen/margin_32dp"
                     android:orientation="horizontal">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:layout_marginRight="16dp"
+                        android:layout_marginRight="@dimen/margin_16dp"
                         android:orientation="vertical">
 
                         <ImageView
                             android:id="@+id/workout_music"
-                            android:layout_width="140dp"
-                            android:layout_height="160dp"
+                            android:layout_width="@dimen/home_activity_illustration_width"
+                            android:layout_height="@dimen/home_activity_illustration_height"
                             android:background="@drawable/workout_music_illustration" />
 
                         <TextView
@@ -346,7 +346,7 @@
                             android:layout_height="wrap_content"
                             android:textColor="@color/colorWhite"
                             android:fontFamily="sans-serif"
-                            android:textSize="14sp"
+                            android:textSize="@dimen/header_3_text_size"
                             android:layout_marginTop="4dp"
                             android:text="Workout" />
 
@@ -356,8 +356,8 @@
                             android:textColor="@color/colorSilverChalice"
                             android:textAlignment="center"
                             android:fontFamily="sans-serif"
-                            android:textSize="12sp"
-                            android:lineHeight="12sp"
+                            android:textSize="@dimen/header_4_text_size"
+                            android:lineHeight="@dimen/header_4_text_size"
                             android:text="Get ready for your full\nbody workout." />
                     </LinearLayout>
 
@@ -365,13 +365,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:layout_marginRight="16dp"
+                        android:layout_marginRight="@dimen/margin_16dp"
                         android:orientation="vertical">
 
                         <ImageView
                             android:id="@+id/dancing_songs"
-                            android:layout_width="140dp"
-                            android:layout_height="160dp"
+                            android:layout_width="@dimen/home_activity_illustration_width"
+                            android:layout_height="@dimen/home_activity_illustration_height"
                             android:background="@drawable/dancing_songs_illustration" />
 
                         <TextView
@@ -379,7 +379,7 @@
                             android:layout_height="wrap_content"
                             android:textColor="@color/colorWhite"
                             android:fontFamily="sans-serif"
-                            android:textSize="14sp"
+                            android:textSize="@dimen/header_3_text_size"
                             android:layout_marginTop="4dp"
                             android:text="Dance" />
 
@@ -389,8 +389,8 @@
                             android:textColor="@color/colorSilverChalice"
                             android:textAlignment="center"
                             android:fontFamily="sans-serif"
-                            android:textSize="12sp"
-                            android:lineHeight="12sp"
+                            android:textSize="@dimen/header_4_text_size"
+                            android:lineHeight="@dimen/header_4_text_size"
                             android:text="Songs that will make you\nget-up and dance." />
                     </LinearLayout>
 
@@ -398,13 +398,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:layout_marginRight="16dp"
+                        android:layout_marginRight="@dimen/margin_16dp"
                         android:orientation="vertical">
 
                         <ImageView
                             android:id="@+id/relaxing_songs"
-                            android:layout_width="140dp"
-                            android:layout_height="160dp"
+                            android:layout_width="@dimen/home_activity_illustration_width"
+                            android:layout_height="@dimen/home_activity_illustration_height"
                             android:background="@drawable/sleepy_songs_illustration" />
 
                         <TextView
@@ -412,7 +412,7 @@
                             android:layout_height="wrap_content"
                             android:textColor="@color/colorWhite"
                             android:fontFamily="sans-serif"
-                            android:textSize="14sp"
+                            android:textSize="@dimen/header_3_text_size"
                             android:layout_marginTop="4dp"
                             android:text="Relaxing" />
 
@@ -422,8 +422,8 @@
                             android:textColor="@color/colorSilverChalice"
                             android:textAlignment="center"
                             android:fontFamily="sans-serif"
-                            android:textSize="12sp"
-                            android:lineHeight="12sp"
+                            android:textSize="@dimen/header_4_text_size"
+                            android:lineHeight="@dimen/header_4_text_size"
                             android:text="Songs that will help you\nrelax and fall asleep." />
                     </LinearLayout>
 
@@ -431,13 +431,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:layout_marginRight="16dp"
+                        android:layout_marginRight="@dimen/margin_16dp"
                         android:orientation="vertical">
 
                         <ImageView
                             android:id="@+id/edm_songs"
-                            android:layout_width="140dp"
-                            android:layout_height="160dp"
+                            android:layout_width="@dimen/home_activity_illustration_width"
+                            android:layout_height="@dimen/home_activity_illustration_height"
                             android:background="@drawable/edm_songs_illustration" />
 
                         <TextView
@@ -445,7 +445,7 @@
                             android:layout_height="wrap_content"
                             android:textColor="@color/colorWhite"
                             android:fontFamily="sans-serif"
-                            android:textSize="14sp"
+                            android:textSize="@dimen/header_3_text_size"
                             android:layout_marginTop="4dp"
                             android:text="EDM" />
 
@@ -455,8 +455,8 @@
                             android:textColor="@color/colorSilverChalice"
                             android:textAlignment="center"
                             android:fontFamily="sans-serif"
-                            android:textSize="12sp"
-                            android:lineHeight="12sp"
+                            android:textSize="@dimen/header_4_text_size"
+                            android:lineHeight="@dimen/header_4_text_size"
                             android:text="Most overplayed EDM\nsongs of all time." />
                     </LinearLayout>
 
@@ -464,13 +464,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:layout_marginRight="16dp"
+                        android:layout_marginRight="@dimen/margin_16dp"
                         android:orientation="vertical">
 
                         <ImageView
                             android:id="@+id/romantic_music"
-                            android:layout_width="140dp"
-                            android:layout_height="160dp"
+                            android:layout_width="@dimen/home_activity_illustration_width"
+                            android:layout_height="@dimen/home_activity_illustration_height"
                             android:background="@drawable/romantic_songs_illustration" />
 
                         <TextView
@@ -478,7 +478,7 @@
                             android:layout_height="wrap_content"
                             android:textColor="@color/colorWhite"
                             android:fontFamily="sans-serif"
-                            android:textSize="14sp"
+                            android:textSize="@dimen/header_3_text_size"
                             android:layout_marginTop="4dp"
                             android:text="Romantic" />
 
@@ -488,8 +488,8 @@
                             android:textColor="@color/colorSilverChalice"
                             android:textAlignment="center"
                             android:fontFamily="sans-serif"
-                            android:textSize="12sp"
-                            android:lineHeight="12sp"
+                            android:textSize="@dimen/header_4_text_size"
+                            android:lineHeight="@dimen/header_4_text_size"
                             android:text="Get in the romantic mood\nwith our love songs." />
                     </LinearLayout>
 
@@ -497,13 +497,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:layout_marginRight="16dp"
+                        android:layout_marginRight="@dimen/margin_16dp"
                         android:orientation="vertical">
 
                         <ImageView
                             android:id="@+id/sad_songs"
-                            android:layout_width="140dp"
-                            android:layout_height="160dp"
+                            android:layout_width="@dimen/home_activity_illustration_width"
+                            android:layout_height="@dimen/home_activity_illustration_height"
                             android:background="@drawable/sad_songs_illustration" />
 
                         <TextView
@@ -511,7 +511,7 @@
                             android:layout_height="wrap_content"
                             android:textColor="@color/colorWhite"
                             android:fontFamily="sans-serif"
-                            android:textSize="14sp"
+                            android:textSize="@dimen/header_3_text_size"
                             android:layout_marginTop="4dp"
                             android:text="Sad" />
 
@@ -521,8 +521,8 @@
                             android:textColor="@color/colorSilverChalice"
                             android:textAlignment="center"
                             android:fontFamily="sans-serif"
-                            android:textSize="12sp"
-                            android:lineHeight="12sp"
+                            android:textSize="@dimen/header_4_text_size"
+                            android:lineHeight="@dimen/header_4_text_size"
                             android:text="Sad songs to get you\ncrying like a baby." />
                     </LinearLayout>
 
@@ -530,13 +530,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:layout_marginRight="16dp"
+                        android:layout_marginRight="@dimen/margin_16dp"
                         android:orientation="vertical">
 
                         <ImageView
                             android:id="@+id/concentrating_songs"
-                            android:layout_width="140dp"
-                            android:layout_height="160dp"
+                            android:layout_width="@dimen/home_activity_illustration_width"
+                            android:layout_height="@dimen/home_activity_illustration_height"
                             android:background="@drawable/concentrating_songs_illustration" />
 
                         <TextView
@@ -544,7 +544,7 @@
                             android:layout_height="wrap_content"
                             android:textColor="@color/colorWhite"
                             android:fontFamily="sans-serif"
-                            android:textSize="14sp"
+                            android:textSize="@dimen/header_3_text_size"
                             android:layout_marginTop="4dp"
                             android:text="Concentration" />
 
@@ -554,8 +554,8 @@
                             android:textColor="@color/colorSilverChalice"
                             android:textAlignment="center"
                             android:fontFamily="sans-serif"
-                            android:textSize="12sp"
-                            android:lineHeight="12sp"
+                            android:textSize="@dimen/header_4_text_size"
+                            android:lineHeight="@dimen/header_4_text_size"
                             android:text="Time to travel inwards\nand feel the bliss!." />
                     </LinearLayout>
                 </LinearLayout>
@@ -568,11 +568,11 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/gotham_bold"
                 android:textStyle="bold"
-                android:textSize="26sp"
+                android:textSize="@dimen/header_1_text_size"
                 android:textColor="@color/colorWhite"
                 android:text="Trending Now"
                 android:textAlignment="viewStart"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="@dimen/margin_16dp"
                 android:layout_marginTop="26dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -581,9 +581,9 @@
                 android:id="@+id/trending_now_categories"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
+                android:layout_marginHorizontal="@dimen/margin_16dp"
                 android:orientation="vertical"
-                android:layout_margin="16dp"
+                android:layout_margin="@dimen/margin_16dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/trending_now" >
@@ -591,14 +591,14 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
+                    android:layout_marginBottom="@dimen/margin_16dp"
                     android:gravity="start"
                     android:orientation="horizontal" >
 
                     <ImageView
                         android:id="@+id/hit_songs_in_india_illustration"
-                        android:layout_width="140dp"
-                        android:layout_height="160dp"
+                        android:layout_width="@dimen/home_activity_illustration_width"
+                        android:layout_height="@dimen/home_activity_illustration_height"
                         android:layout_gravity="start"
                         android:src="@drawable/hit_songs_india_illustration"
                         app:layout_constraintStart_toStartOf="parent"
@@ -606,7 +606,7 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginHorizontal="@dimen/margin_16dp"
                         android:orientation="vertical"
                         app:layout_constraintStart_toEndOf="@+id/hit_songs_in_india_illustration"
                         app:layout_constraintTop_toTopOf="parent"
@@ -618,7 +618,7 @@
                             android:textColor="@color/colorWhite"
                             android:fontFamily="sans-serif"
                             android:textStyle="bold"
-                            android:textSize="16sp"
+                            android:textSize="@dimen/header_2_text_size"
                             android:layout_marginTop="4dp"
                             android:text="Hit Songs in India" />
 
@@ -634,7 +634,7 @@
                             android:textColor="@color/colorSilverChalice"
                             android:textAlignment="viewStart"
                             android:fontFamily="sans-serif"
-                            android:textSize="12sp"
+                            android:textSize="@dimen/header_4_text_size"
                             android:text="Your daily update of all time\nmost played tracks in India.\nBased on Youtube Music\nGlobal charts." />
                     </LinearLayout>
 
@@ -642,14 +642,14 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
+                    android:layout_marginBottom="@dimen/margin_16dp"
                     android:gravity="start"
                     android:orientation="horizontal" >
 
                     <ImageView
                         android:id="@+id/weeky_hit_songs_in_india_illustration"
-                        android:layout_width="140dp"
-                        android:layout_height="160dp"
+                        android:layout_width="@dimen/home_activity_illustration_width"
+                        android:layout_height="@dimen/home_activity_illustration_height"
                         android:layout_gravity="start"
                         android:src="@drawable/weekly_hit_songs_india_illustration"
                         app:layout_constraintStart_toStartOf="parent"
@@ -657,7 +657,7 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginHorizontal="@dimen/margin_16dp"
                         android:orientation="vertical"
                         app:layout_constraintStart_toEndOf="@+id/weeky_hit_songs_in_india_illustration"
                         app:layout_constraintTop_toTopOf="parent"
@@ -669,7 +669,7 @@
                             android:textColor="@color/colorWhite"
                             android:fontFamily="sans-serif"
                             android:textStyle="bold"
-                            android:textSize="16sp"
+                            android:textSize="@dimen/header_2_text_size"
                             android:layout_marginTop="4dp"
                             android:text="Weekly top hits in India" />
 
@@ -685,7 +685,7 @@
                             android:textColor="@color/colorSilverChalice"
                             android:textAlignment="viewStart"
                             android:fontFamily="sans-serif"
-                            android:textSize="12sp"
+                            android:textSize="@dimen/header_4_text_size"
                             android:text="Listen to the top hits of this\nweek in India.\nBased on Youtube Music\nGlobal charts." />
                     </LinearLayout>
 
@@ -694,14 +694,14 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
+                    android:layout_marginBottom="@dimen/margin_16dp"
                     android:gravity="start"
                     android:orientation="horizontal" >
 
                     <ImageView
                         android:id="@+id/hit_songs_globally_illustration"
-                        android:layout_width="140dp"
-                        android:layout_height="160dp"
+                        android:layout_width="@dimen/home_activity_illustration_width"
+                        android:layout_height="@dimen/home_activity_illustration_height"
                         android:layout_gravity="start"
                         android:src="@drawable/hit_songs_globally_illustration"
                         app:layout_constraintStart_toStartOf="parent"
@@ -709,7 +709,7 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginHorizontal="@dimen/margin_16dp"
                         android:orientation="vertical"
                         app:layout_constraintStart_toEndOf="@+id/hit_songs_globally_illustration"
                         app:layout_constraintTop_toTopOf="parent"
@@ -721,7 +721,7 @@
                             android:textColor="@color/colorWhite"
                             android:fontFamily="sans-serif"
                             android:textStyle="bold"
-                            android:textSize="16sp"
+                            android:textSize="@dimen/header_2_text_size"
                             android:layout_marginTop="4dp"
                             android:text="Hit Songs Globally" />
 
@@ -737,7 +737,7 @@
                             android:textColor="@color/colorSilverChalice"
                             android:textAlignment="viewStart"
                             android:fontFamily="sans-serif"
-                            android:textSize="12sp"
+                            android:textSize="@dimen/header_4_text_size"
                             android:text="Your daily update of all time\nmost played tracks globally.\nBased on Youtube Music\nGlobal charts." />
                     </LinearLayout>
 
@@ -750,8 +750,8 @@
 
                     <ImageView
                         android:id="@+id/weeky_hit_songs_globally_illustration"
-                        android:layout_width="140dp"
-                        android:layout_height="160dp"
+                        android:layout_width="@dimen/home_activity_illustration_width"
+                        android:layout_height="@dimen/home_activity_illustration_height"
                         android:layout_gravity="start"
                         android:src="@drawable/weekly_hit_songs_globally_illustration"
                         app:layout_constraintStart_toStartOf="parent"
@@ -759,7 +759,7 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginHorizontal="@dimen/margin_16dp"
                         android:orientation="vertical"
                         app:layout_constraintStart_toEndOf="@+id/weeky_hit_songs_globally_illustration"
                         app:layout_constraintTop_toTopOf="parent"
@@ -771,7 +771,7 @@
                             android:textColor="@color/colorWhite"
                             android:fontFamily="sans-serif"
                             android:textStyle="bold"
-                            android:textSize="16sp"
+                            android:textSize="@dimen/header_2_text_size"
                             android:layout_marginTop="4dp"
                             android:text="Weekly top hits Globally" />
 
@@ -787,7 +787,7 @@
                             android:textColor="@color/colorSilverChalice"
                             android:textAlignment="viewStart"
                             android:fontFamily="sans-serif"
-                            android:textSize="12sp"
+                            android:textSize="@dimen/header_4_text_size"
                             android:text="Listen to the top hits of this\nweek all over globe.\nBased on Youtube Music\nGlobal charts." />
                     </LinearLayout>
 
@@ -796,7 +796,7 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="@dimen/margin_80dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/trending_now_categories" />
