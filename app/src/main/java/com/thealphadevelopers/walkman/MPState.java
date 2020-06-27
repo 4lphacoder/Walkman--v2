@@ -14,7 +14,7 @@ import android.media.MediaPlayer;
 
 import androidx.fragment.app.Fragment;
 
-import com.thealphadevelopers.walkman.Models.MultimediaMetadata;
+import com.thealphadevelopers.walkman.Models.MediaMetadata;
 import com.thealphadevelopers.walkman.Models.UserInfo;
 import com.thealphadevelopers.walkman.Models.Youtube.Search;
 import java.util.ArrayList;
@@ -38,7 +38,7 @@ public class MPState extends Application {
     // THESE VALUES ARE USED TO HANDLE ON-GOING STATE OF PLAYER LIKE WHETHER PLAY BTN PRESSED OR PAUSE
     // BTN PRESSED, LIKE STATE OF SONG, TITLE OF SONG, CHANNEL NAME ETC.
 
-    public static MultimediaMetadata metadataOfCP;      // META-DATA OF CURRENTLY PLAYING MEDIA FILE
+    public static MediaMetadata metadataOfCP;      // META-DATA OF CURRENTLY PLAYING MEDIA FILE
 
     // MEDIA PLAYER ACTUAL STATE HOLDERS
     private static int currentState;
@@ -68,7 +68,7 @@ public class MPState extends Application {
     public static int homeMoodsCatScrollX;
     public static int homeMoodsCatScrollY;
     public static boolean isLoopOverASongActive;
-    ArrayList<MultimediaMetadata> playerQueue;
+    ArrayList<MediaMetadata> playerQueue;
 
 
     // CREATING A MEDIA PLAYER OBJECT
@@ -133,7 +133,7 @@ public class MPState extends Application {
 
         SharedPreferences onCloseStateSharedPref = context.getSharedPreferences("on_close_state",Context.MODE_PRIVATE);
         SharedPreferences.Editor onCloseStateEditor = onCloseStateSharedPref.edit();
-        onCloseStateEditor.putString("lastPlayedSong",metadataOfCP.parseMetadataToString());
+        onCloseStateEditor.putString("lastPlayedSong",metadataOfCP.toString());
         onCloseStateEditor.putInt("currentlyInUseApiKeyIdx",Config.currentlyInUseApiKeyIdx);
         onCloseStateEditor.putInt("audioQualityPreference",audioQualityPreference);
         onCloseStateEditor.commit();
@@ -166,7 +166,7 @@ public class MPState extends Application {
 
         // AFTER FETCHING ALL THESE WE STORE THEM IN PUBLIC DATA-MEMBERS OF CLASS - MediaPLayerState
         SharedPreferences onCloseStateSharedPreferences = context.getSharedPreferences("on_close_state",Context.MODE_PRIVATE);
-        MPState.metadataOfCP = MultimediaMetadata.parseMetaDataFromString(
+        MPState.metadataOfCP = MediaMetadata.parseMetaDataFromString(
                 onCloseStateSharedPreferences.getString("lastPlayedSong",null));
         Config.currentlyInUseApiKeyIdx = onCloseStateSharedPreferences.getInt("currentlyInUseApiKeyIdx",0); // SETTING DEFAULT TO ZERO
         MPState.audioQualityPreference = onCloseStateSharedPreferences.getInt("audioQualityPreference",HIGH_QUALITY_AUDIO); // SETTING DEFAULT TO HIGH-QUALITY AUDIO
