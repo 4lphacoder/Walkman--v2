@@ -24,6 +24,9 @@ import java.util.ArrayList;
 // THIS CLASS LOADED AT THE LAUNCH OF APPLICATION
 
 public class MPState extends Application {
+    // ADDING DEBUG TAGS
+    public static final String DEBUG_TAG = "application-status";
+
     // NOTIFICATION CHANNEL ID, FOR CLASSIFYING VARIOUS NOTIFICATIONS SEND BY APPLICATION
     public static final String PLAYBACK_CONTROLS = "PLAYBACK_CONTROLS";
 

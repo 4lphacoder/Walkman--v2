@@ -9,6 +9,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.thealphadevelopers.walkman.MPState;
 import com.thealphadevelopers.walkman.Services.Base64DecoderAsync;
+import com.thealphadevelopers.walkman.Services.Base64EncoderAsync;
 import com.thealphadevelopers.walkman.Services.FetchImageFromURI;
 
 import java.util.ArrayList;
@@ -58,9 +59,19 @@ public class UserInfo {
         // CALL BACK METHOD EXECUTES WHEN USER-AVATAR GETS DOWNLOADED FROM OAUTH-SERVICE SERVERS
         new FetchImageFromURI() {
             @Override
-            protected void onPostExecute(String base64EncodedImage) {
-                userAvatar = base64EncodedImage;
-                MPState.save(context);
+            protected void onPostExecute(byte[] binaryData) {
+                // ENCODING THIS RECEIVED BINARY DATA TO BASE64 ENCODED STRING
+                if( binaryData != null ) {
+                    // CONVERTING BINARY DATA INTO BASE64 ENCODED STRING FOR PROPERLY STORING
+                    // IN SHARED-PREFERENCES
+                    new Base64EncoderAsync() {
+                        @Override
+                        protected void onPostExecute(String s) {
+                            userAvatar = s;
+                            MPState.save(context);
+                        }
+                    }.execute(binaryData);
+                }
             }
         }.execute(uri);
     }
