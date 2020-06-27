@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 
 public class MediaMetadata {
     private int hash;
+    private String thumbnailURI;
     private boolean isPlayingFromNetwork;
     private String songTitle;
     private String channelTitle;
@@ -21,6 +22,7 @@ public class MediaMetadata {
 
     public MediaMetadata() {
         this.hash = 0;
+        this.thumbnailURI = null;
         this.isPlayingFromNetwork = false;
         this.songTitle = null;
         this.channelTitle = null;
@@ -46,6 +48,7 @@ public class MediaMetadata {
         if( str == null ) {
             MediaMetadata metadata = new MediaMetadata();
             metadata.hash = 0;
+            metadata.thumbnailURI = null;
             metadata.isPlayingFromNetwork = false;
             metadata.songTitle = null;
             metadata.channelTitle = null;
@@ -69,6 +72,7 @@ public class MediaMetadata {
 
     // GETTER METHODS OF THIS CLASS
     public int getHash()                    { return hash; }
+    public String getThumbnailURI()         { return thumbnailURI; }
     public boolean isPlayingFromNetwork()   { return isPlayingFromNetwork; }
     public String getSongTitle()            { return songTitle; }
     public String getChannelTitle()         { return channelTitle; }
@@ -83,6 +87,8 @@ public class MediaMetadata {
     public String[] getArtists()            { return artists; }
 
     // SETTERS OF THIS CLASS
+
+    public void setThumbnailURI(String thumbnailURI)                    { this.thumbnailURI = thumbnailURI; }
     public void setPlayingFromNetwork(boolean playingFromNetwork)       { isPlayingFromNetwork = playingFromNetwork; }
     public void setSongTitle(String songTitle)                          { this.songTitle = songTitle; }
     public void setChannelTitle(String channelTitle)                    { this.channelTitle = channelTitle; }
