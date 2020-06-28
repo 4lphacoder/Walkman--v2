@@ -15,6 +15,7 @@ import android.media.MediaPlayer;
 import androidx.fragment.app.Fragment;
 
 import com.thealphadevelopers.walkman.Models.MediaMetadata;
+import com.thealphadevelopers.walkman.Models.PlayerQueue;
 import com.thealphadevelopers.walkman.Models.UserInfo;
 import com.thealphadevelopers.walkman.Models.Youtube.Search;
 import java.util.ArrayList;
@@ -57,7 +58,6 @@ public class MPState extends Application {
     public static final int LOW_QUALITY_AUDIO = 249;
 
     // SOME OTHER MEDIA-PLAYER FEATURES LIKE QUEUE,SHUFFLE-STATE, ETC.
-    public static boolean isRepeatPlaylistActive;
     public static Search lastYoutubeSearchResp;
     public static int exploreMusicScrollX;
     public static int exploreMusicScrollY;
@@ -67,8 +67,7 @@ public class MPState extends Application {
     public static int homeRecommendationScrollY;
     public static int homeMoodsCatScrollX;
     public static int homeMoodsCatScrollY;
-    public static boolean isLoopOverASongActive;
-    ArrayList<MediaMetadata> playerQueue;
+    public static PlayerQueue playerQueue = new PlayerQueue();
 
 
     // CREATING A MEDIA PLAYER OBJECT

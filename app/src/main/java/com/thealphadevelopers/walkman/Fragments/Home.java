@@ -1,5 +1,6 @@
 package com.thealphadevelopers.walkman.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,7 +15,10 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.thealphadevelopers.walkman.MPState;
+import com.thealphadevelopers.walkman.Models.MediaMetadata;
+import com.thealphadevelopers.walkman.Models.PlayerQueue;
 import com.thealphadevelopers.walkman.R;
+import com.thealphadevelopers.walkman.Services.MPService;
 
 // THIS FRAGMENT PRESENTS VARIOUS PLAYLISTS LIKE FAVOURITE SONGS, MOST-LISTENED SONGS, LANGUAGE
 // CATEGORISED SONGS, SONGS BASED ON MOOD OF USER, VARIOUS PLAYLISTS OF FAVOURITE ARTISTS OF USER, ETC.

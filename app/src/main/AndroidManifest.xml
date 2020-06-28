@@ -31,6 +31,7 @@
         <activity android:name=".Activities.UserPrefLanguagesActivity" />
         <activity android:name=".Activities.SigninActivity" />
         <activity android:name=".Activities.MainActivity" />
+        <service android:name=".Services.MPService" />
 
     </application>
 

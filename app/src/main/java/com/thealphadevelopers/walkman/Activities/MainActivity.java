@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -13,8 +12,6 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
 import com.thealphadevelopers.walkman.MPState;
-//import com.thealphadevelopers.walkman.MPService;
-//import com.thealphadevelopers.walkman.MinimalMC;
 import com.thealphadevelopers.walkman.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -23,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
 
     // DECLARING OBJECTS
     private int SelectedNavigationBtn;
-//    private MinimalMC minimalMC;
     private BottomNavigationView bottomNavigationView;
 
     @Override
@@ -37,9 +33,6 @@ public class MainActivity extends AppCompatActivity {
                 .beginTransaction()
                 .replace(R.id.fragment_container,MPState.homeFragment)
                 .commit();
-
-        // CREATING INSTANCE OF MINIMAL-MEDIA-CONTROLLER CLASS TO HANDLE CLICK EVENTS AND OTHER
-//        minimalMC = new MinimalMC(this, this);
 
         bottomNavigationView = findViewById(R.id.bottom_navigation_view);
         bottomNavigationView.setSelectedItemId(R.id.home_btn);
