@@ -17,6 +17,7 @@ import com.thealphadevelopers.walkman.Models.MediaMetadata;
 import com.thealphadevelopers.walkman.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.thealphadevelopers.walkman.Services.MPService;
+import com.thealphadevelopers.walkman.Services.MPServiceStateChangeListener;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -29,9 +30,36 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        bottomNavigationView = findViewById(R.id.bottom_navigation_view);
 
         // STARTING MEDIA-PLAYER-SERVICE
         startService(new Intent(this,MPService.class));
+        MPState.mediaPlayerService.addMPServiceStateChangeListener(this.getClass().getName(),
+                new MPServiceStateChangeListener() {
+            @Override
+            public void onStateChanges(int currentState) {
+                if(currentState == MPService.PLAYING_STATE) {
+                    bottomNavigationView.getMenu().getItem(0).setIcon(R.drawable.ic_pause_filled_accent);
+                    bottomNavigationView.getMenu().getItem(0).setTitle("Pause");
+                }
+                if(currentState == MPService.LOADING_STATE) {
+                    bottomNavigationView.getMenu().getItem(0).setIcon(R.drawable.ic_play_arrow_filled_accent_168dp);
+                    bottomNavigationView.getMenu().getItem(0).setTitle("Loading");
+                }
+                if(currentState == MPService.PAUSED_STATE) {
+                    bottomNavigationView.getMenu().getItem(0).setIcon(R.drawable.ic_play_arrow_filled_accent_168dp);
+                    bottomNavigationView.getMenu().getItem(0).setTitle("Play");
+                }
+                if(currentState == MPService.FINISHED_STATE) {
+                    bottomNavigationView.getMenu().getItem(0).setIcon(R.drawable.ic_play_arrow_filled_accent_168dp);
+                    bottomNavigationView.getMenu().getItem(0).setTitle("Play");
+                }
+                if(currentState == MPService.NULL_STATE) {
+                    bottomNavigationView.getMenu().getItem(0).setIcon(R.drawable.ic_play_arrow_filled_accent_168dp);
+                    bottomNavigationView.getMenu().getItem(0).setTitle("Play");
+                }
+            }
+        });
 
         // DISPLAYING DEFAULT FRAGMENT
         getSupportFragmentManager()
@@ -39,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
                 .replace(R.id.fragment_container,MPState.homeFragment)
                 .commit();
 
-        bottomNavigationView = findViewById(R.id.bottom_navigation_view);
         bottomNavigationView.setSelectedItemId(R.id.home_btn);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -49,10 +76,10 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.play_pause_button:
                         // TOGGLING FROM PLAYING STATE TO PAUSE STATE
                         if ( MPState.mediaPlayerService.getCurrentState() == MPService.PLAYING_STATE )
-                            MPState.mediaPlayerService.pause();
+                            MPState.mediaPlayerService.pause(MainActivity.this);
                             // TOGGLING FROM PAUSE STATE TO PLAYING STATE
                         else if ( MPState.mediaPlayerService.getCurrentState() == MPService.PAUSED_STATE )
-                            MPState.mediaPlayerService.play();
+                            MPState.mediaPlayerService.play(MainActivity.this);
                             // TOGGLING FROM IDLE STATE TO LOADING STATE
                         else if ( MPState.mediaPlayerService.getCurrentState() == MPService.IDLE_STATE )
                             MPState.mediaPlayerService.changeNext(MainActivity.this);
@@ -106,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        MPState.mediaPlayerService.stop();
+        MPState.mediaPlayerService.stop(this);
         MPState.save(this);
     }
 }

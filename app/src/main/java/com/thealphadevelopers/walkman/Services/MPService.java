@@ -19,6 +19,8 @@ import com.thealphadevelopers.walkman.MPState;
 import com.thealphadevelopers.walkman.Models.MediaMetadata;
 import com.thealphadevelopers.walkman.R;
 
+import java.util.HashMap;
+
 
 public class MPService extends Service {
 
@@ -33,8 +35,7 @@ public class MPService extends Service {
     private int currentState = IDLE_STATE;
     private MediaMetadata currentPlayingMedia;
     private MediaPlayer mediaPlayer = new MediaPlayer();
-    private MPServiceStateChangeListener stateChangeListener;
-
+    private HashMap<String, MPServiceStateChangeListener> stateChangeListener = new HashMap<>();
 
     @Override
     public void onCreate() {
@@ -49,18 +50,18 @@ public class MPService extends Service {
                             Toast.LENGTH_LONG);
             toast.setGravity(Gravity.CENTER_HORIZONTAL|Gravity.CENTER_VERTICAL,0,0);
             toast.show();
-            setCurrentState(MPService.FINISHED_STATE);
+            setCurrentState(ctx, MPService.FINISHED_STATE);
         }
         else {
             try {
                 mediaPlayer.reset();
                 mediaPlayer.setDataSource( this.currentPlayingMedia.getURI() );
-                setCurrentState(MPService.LOADING_STATE);
+                setCurrentState(ctx, MPService.LOADING_STATE);
                 mediaPlayer.prepareAsync();
                 mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
                     @Override
                     public void onPrepared(MediaPlayer mp) {
-                        play();
+                        play(ctx);
                     }
                 });
 
@@ -80,42 +81,42 @@ public class MPService extends Service {
             catch ( Exception e ) {
                 // EXCEPTION HANDLING
                 Log.d(MPState.DEBUG_TAG, e.toString());
-                setCurrentState(MPService.NULL_STATE);
+                setCurrentState(ctx, MPService.NULL_STATE);
             }
         }
     }
 
-    public void pause() {
+    public void pause(Context ctx) {
         this.mediaPlayer.pause();
-        setCurrentState(MPService.PAUSED_STATE);
+        setCurrentState(ctx, MPService.PAUSED_STATE);
     }
 
-    public void stop() {
+    public void stop(Context ctx) {
         mediaPlayer.stop();
         mediaPlayer.release();
         mediaPlayer = null;
-        setCurrentState(MPService.FINISHED_STATE);
+        setCurrentState(ctx, MPService.FINISHED_STATE);
         onDestroy();
         MPState.mediaPlayerService = null;
     }
 
-    public void play() {
+    public void play(Context ctx) {
         this.mediaPlayer.start();
-        setCurrentState(MPService.PLAYING_STATE);
+        setCurrentState(ctx, MPService.PLAYING_STATE);
     }
 
     public int getCurrentState() {
         return currentState;
     }
 
-    public void addMPServiceStateChangeListener(MPServiceStateChangeListener listener) {
-        this.stateChangeListener = listener;
+    public void addMPServiceStateChangeListener(String className, MPServiceStateChangeListener listener) {
+        stateChangeListener.put(className,listener);
     }
 
-    public void setCurrentState(int newState) {
+    public void setCurrentState(Context ctx, int newState) {
         this.currentState = newState;
-        if( this.stateChangeListener != null )
-            stateChangeListener.onStateChanges(newState);
+        if( this.stateChangeListener.containsKey(ctx.getClass().getName()) )
+            this.stateChangeListener.get(ctx.getClass().getName()).onStateChanges(newState);
     }
 
     public void changeNext(Context ctx) {

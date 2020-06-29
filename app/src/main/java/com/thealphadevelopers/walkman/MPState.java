@@ -3,26 +3,18 @@ package com.thealphadevelopers.walkman;
 import android.app.Application;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
-import android.content.Intent;
 import android.os.Build;
-import android.util.Log;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.media.AudioManager;
-
 import androidx.fragment.app.Fragment;
-
-import com.thealphadevelopers.walkman.Models.MediaMetadata;
 import com.thealphadevelopers.walkman.Models.PlayerQueue;
 import com.thealphadevelopers.walkman.Models.UserInfo;
-import com.thealphadevelopers.walkman.Models.Youtube.Search;
 import com.thealphadevelopers.walkman.Services.MPService;
 
 
-// THIS BASE-CLASS ACT AS A WRAPPER CLASS FOR THE WHOLE APPLICATION
-// THIS CLASS LOADED AT THE LAUNCH OF APPLICATION
-
 public class MPState extends Application {
+    // THIS BASE-CLASS ACT AS A WRAPPER CLASS FOR THE WHOLE APPLICATION
+    // THIS CLASS LOADED AT THE LAUNCH OF APPLICATION
     // ADDING DEBUG TAGS
     public static final String DEBUG_TAG = "application-status";
 
@@ -55,22 +47,11 @@ public class MPState extends Application {
     // CREATING A MEDIA PLAYER OBJECT
     public static Fragment homeFragment;
     public static Fragment exploreMusicFragment;
-    public static AudioManager audioManager;
-
-    public static void createMPServiceInstance() {
-        if( mediaPlayerService == null )
-                mediaPlayerService = new MPService();
-    }
-
-    public static void addPlayerQueueInstance() {
-        if( playerQueue == null )
-                playerQueue = new PlayerQueue();
-    }
 
     public static void save(Context context) {
         // STORES THE FOLLOWING IN SHARED PREFERENCES :-
         // 1. this.userInfo
-        // 2. this.currentPlayingMedia
+        // 2. this.playerQueue
         // 3. Config.currentlyInUseApiKeyIdx
         // 4. this.audioQualityPreference
 
@@ -90,7 +71,7 @@ public class MPState extends Application {
     public static void load(Context context) {
         // LOADS THE FOLLOWING FROM SHARED PREFERENCES :-
         // 1. this.userInfo
-        // 2. this.currentPlayingMedia
+        // 2. this.playerQueue
         // 3. Config.currentlyInUseApiKeyIdx
         // 4. this.audioQualityPreference
 
