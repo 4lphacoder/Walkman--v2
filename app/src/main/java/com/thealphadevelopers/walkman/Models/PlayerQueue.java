@@ -1,5 +1,8 @@
 package com.thealphadevelopers.walkman.Models;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
@@ -107,6 +110,21 @@ public class PlayerQueue {
         return null;
     }
 
+    @Override
+    public String toString() {
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        return gson.toJson(this);
+    }
+
+    public static PlayerQueue parseFromString(String str) {
+        if( str == null )
+            return new PlayerQueue();
+
+        Gson gson = new Gson();
+        PlayerQueue playerQueue = gson.fromJson(str, PlayerQueue.class);
+        return playerQueue;
+    }
+
     public MediaMetadata getPreviouslyPlayedMedia() {
         MediaMetadata media = lastPlayedMedia.pop();
         return media;
@@ -142,4 +160,11 @@ public class PlayerQueue {
         toPlay.put(media.getHash(), media);
     }
 
+    public void clearQueue() {
+        queue = new ArrayList<>();
+        lastPlayedMedia = new Stack<>();
+        currentPlayingMedia = null;
+        played = new HashMap<>();
+        toPlay = new HashMap<>();
+    }
 }

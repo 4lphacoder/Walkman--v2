@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -12,8 +13,10 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
 import com.thealphadevelopers.walkman.MPState;
+import com.thealphadevelopers.walkman.Models.MediaMetadata;
 import com.thealphadevelopers.walkman.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.thealphadevelopers.walkman.Services.MPService;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -24,9 +27,11 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.d("Application-Status","[ INFO  ] Main Activity onCreate Method Called");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // STARTING MEDIA-PLAYER-SERVICE
+        startService(new Intent(this,MPService.class));
 
         // DISPLAYING DEFAULT FRAGMENT
         getSupportFragmentManager()
@@ -39,29 +44,30 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-
                 Fragment selectedFragment = null;
                 switch (menuItem.getItemId()) {
                     case R.id.play_pause_button:
                         // TOGGLING FROM PLAYING STATE TO PAUSE STATE
-                        if ( MPState.getCurrentState() == MPState.PLAYING_STATE )
-                            MPState.setCurrentState(MPState.PAUSED_STATE);
+                        if ( MPState.mediaPlayerService.getCurrentState() == MPService.PLAYING_STATE )
+                            MPState.mediaPlayerService.pause();
                             // TOGGLING FROM PAUSE STATE TO PLAYING STATE
-                        else if ( MPState.getCurrentState() == MPState.PAUSED_STATE )
-                            MPState.setCurrentState(MPState.PLAYING_STATE);
-                        else if ( MPState.getCurrentState() == MPState.IDLE_STATE ) {
-                            MPState.setCurrentState(MPState.LOADING_STATE);
-//                            minimalMC.fetchResourceURIFromVideoId(MPState.metadataOfCP.getVideoID(), MPState.audioQualityPreference);
-                        }
+                        else if ( MPState.mediaPlayerService.getCurrentState() == MPService.PAUSED_STATE )
+                            MPState.mediaPlayerService.play();
+                            // TOGGLING FROM IDLE STATE TO LOADING STATE
+                        else if ( MPState.mediaPlayerService.getCurrentState() == MPService.IDLE_STATE )
+                            MPState.mediaPlayerService.changeNext(MainActivity.this);
+                        else if ( MPState.mediaPlayerService.getCurrentState() == MPService.FINISHED_STATE )
+                            MPState.mediaPlayerService.changeNext(MainActivity.this);
+                        else if ( MPState.mediaPlayerService.getCurrentState() == MPService.NULL_STATE )
+                            MPState.mediaPlayerService.changeNext(MainActivity.this);
                         break;
+
                     case R.id.home_btn:
                         selectedFragment = MPState.homeFragment;
                         break;
+
                     case R.id.explore_btn:
                         selectedFragment = MPState.exploreMusicFragment;
-                        break;
-                    case R.id.my_music_btn:
-                        selectedFragment = MPState.homeFragment;
                         break;
                 }
 
@@ -94,16 +100,13 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Log.d("Application-Status","Main Activity OnBackPressed Method called");
         moveTaskToBack(true);
     }
 
     @Override
     protected void onDestroy() {
-        Log.d("Application-Status","[ INFO  ] Main Activity onDestroy Method Called");
         super.onDestroy();
+        MPState.mediaPlayerService.stop();
         MPState.save(this);
-//        stopService(new Intent(this, MPService.class));
-        MPState.audioManager.abandonAudioFocus(MPState.audioFocusChangeListener);
     }
 }
